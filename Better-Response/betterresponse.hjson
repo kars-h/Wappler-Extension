@@ -1,0 +1,38 @@
+{
+  type: 'betterresponse',
+  module : 'betterresponse',
+  action : 'betterresponse',
+  groupTitle : 'Custom Actions',
+  groupIcon : 'fas fa-lg fa-database comp-data',
+  title : 'Better Response @@var(actionStatus)@@',
+  icon : 'fas fa-lg fa-arrow-alt-circle-right',
+  dataPickObject: false,
+  globalVars: {},
+  properties : [
+    {
+      group: 'Response properties',
+      variables: [
+        { name: 'actionName', optionName: 'name', title: 'Name', 
+          type: 'text', defaultValue: ''},
+        { name: 'actionStatus', optionName: 'status', title: 'Status',
+          type: 'text', required: true, defaultValue: '200', help: 'This is the status code, ex. 200. see https://httpstatuses.com', serverDataBindings: true},
+        { name: 'actionText', optionName: 'data', title: 'Text', 
+          type: 'text', defaultValue: false, help: 'This is the body of the response', serverDataBindings: true}       
+      ]
+    },
+        {
+        group: 'Set Headers',
+        variables: [
+            { name: 'headers', optionName: 'headers', key: 'name', keyValue: 'value',
+                        title: 'Headers', type: 'grid',defaultValue: {}, serverDataBindings: true,
+                        columns: [
+                            { field: 'name', caption: 'Name', size: '50%', editable: {type: 'text'} },
+                            { field: 'value', caption: 'Value', size: '50%', allowJson: true, editable: {type: 'datapicker'} },
+                        ],
+                        newRecord: { name: '', value: ''}
+            }
+
+      ]
+    }
+  ]
+}
