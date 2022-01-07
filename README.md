@@ -1,2 +1,7 @@
 # Wappler-Extension
-Wappler extensions by Kars
+
+These extensions are for NodeJS.
+
+## Installation
+Put the extensions in:
+`extensions\server_connect\modules`
